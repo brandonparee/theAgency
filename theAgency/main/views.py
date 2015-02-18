@@ -16,7 +16,7 @@ def makeCompaign(request):
     	return HttpResponseRedirect('/worked yay/')
   else:
     form = CompaignForm()
-  return render(request, 'main/makeAgency.html', {'form': form})
+  return render(request, 'main/makeCompaign.html', {'form': form})
 
 def makeAccount(request):
   if request.method == 'POST':
@@ -43,7 +43,7 @@ def compaign(request, id_num):
   try:
     compaigns = Compaign.objects.get(id=id_num)
   except Compaign.DoesNotExist:
-    return HttpResponseRedirect('/compaigns/')
+    return HttpResponseRedirect('/404/')
   try:
     giveaways = Giveaway.objects.get(compaign_fk=id_num)
   except Giveaway.DoesNotExist:
