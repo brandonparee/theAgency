@@ -1,12 +1,12 @@
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 class Compaign(models.Model):
 	name = models.CharField(max_length=200)
 	description = models.CharField(max_length=2000)
 	founddate = models.DateField()
-	image = models.URLField(max_length=200)
-	#giveaway_fk = models.ForeignKey('Giveaway')
+	image = models.CharField(max_length=200)
 
 class Account(models.Model):
 	name = models.CharField(max_length=50)
@@ -25,9 +25,14 @@ class Account(models.Model):
 class Giveaway(models.Model):
 	quantity = models.CharField(max_length=200)
 	item = models.CharField(max_length=200)
-	image = models.URLField(max_length=200)
+	image = models.CharField(max_length=200)
 	description = models.CharField(max_length=2000)
 	compaign_fk = models.ForeignKey('Compaign')
+
+class CompaignForm(ModelForm):
+	class Meta:
+		model = Compaign
+		fields = '__all__'#fields = ['name','description','founddate','image']
 	
 #how to see whats in the database through CMD:
 #CMD: python manage.py dumpdata <appname> <options>
