@@ -1,7 +1,5 @@
 from django.db import models
-from django.forms import ModelForm
 
-# Create your models here.
 class Compaign(models.Model):
 	name = models.CharField(max_length=200)
 	description = models.CharField(max_length=2000)
@@ -29,11 +27,6 @@ class Giveaway(models.Model):
 	description = models.CharField(max_length=2000)
 	compaign_fk = models.ForeignKey('Compaign')
 
-class CompaignForm(ModelForm):
-	class Meta:
-		model = Compaign
-		fields = '__all__'#fields = ['name','description','founddate','image']
-	
 #how to see whats in the database through CMD:
 #CMD: python manage.py dumpdata <appname> <options>
 #	python manage.py dumpdata database --indent 2

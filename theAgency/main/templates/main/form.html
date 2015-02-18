@@ -5,10 +5,10 @@
 {% endblock title %}
 
 {% block content %}
-	<h1>Content Goes Here</h1>
-	<form method="post" action="">
-		{% csrf_token %}
-		{{ formset }}
-		<input type="submit" value="Submit">
-	</form>
+<h1>Content Goes Here</h1>
+<form action="/form/" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Submit" />
+</form>
 {% endblock %}
