@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='Compaign',
+            name='Campaign',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
@@ -44,22 +44,22 @@ class Migration(migrations.Migration):
                 ('item', models.CharField(max_length=200)),
                 ('image', models.URLField()),
                 ('description', models.CharField(max_length=2000)),
-                ('compaign_fk', models.ForeignKey(to='main.Compaign')),
+                ('campaign_fk', models.ForeignKey(to='main.Campaign')),
             ],
             options={
             },
             bases=(models.Model,),
         ),
         migrations.AddField(
-            model_name='compaign',
+            model_name='campaign',
             name='giveaway_fk',
             field=models.ForeignKey(to='main.Giveaway'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='account',
-            name='compaign_fk',
-            field=models.ForeignKey(to='main.Compaign'),
+            name='campaign_fk',
+            field=models.ForeignKey(to='main.Campaign'),
             preserve_default=True,
         ),
     ]

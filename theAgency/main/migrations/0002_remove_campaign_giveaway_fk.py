@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
-            model_name='compaign',
+            model_name='campaign',
             name='giveaway_fk',
         ),
     ]

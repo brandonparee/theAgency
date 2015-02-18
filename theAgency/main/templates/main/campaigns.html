@@ -6,8 +6,8 @@
 {% endblock title %}
 
 {% block content %}
-{% for p in Compaigns %}
-<a href="/compaign/{{ p.id }}">
+{% for p in Campaigns %}
+<a href="/campaign/{{ p.id }}">
 	<div>
 		<img src={% static p.image %} alt={% static p.image %}>
 		<p> {{ p.name }} </p>

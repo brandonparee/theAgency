@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             preserve_default=True,
         ),
         migrations.AlterField(
-            model_name='compaign',
+            model_name='campaign',
             name='description',
             field=models.TextField(max_length=2000),
             preserve_default=True,

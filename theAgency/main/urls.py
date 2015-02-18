@@ -8,10 +8,10 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', 'main.views.home', name='home'),
-    url(r'^makeCompaign/$', 'main.views.makeCompaign', name='makeCompaign'),
+    url(r'^makeCampaign/$', 'main.views.makeCampaign', name='makeCampaign'),
     url(r'^makeAccount/$', 'main.views.makeAccount', name='makeAccount'),
     url(r'^makeGiveaway/$', 'main.views.makeGiveaway', name='makeGiveaway'),
-     url(r'^compaigns/?', 'main.views.compaigns', name='compaigns'),
-    url(r'^compaign/(?P<id_num>\w{0,50})/$', 'main.views.compaign', name='compaign'),
+    url(r'^campaigns/?', 'main.views.campaigns', name='campaigns'),
+    url(r'^campaign/(?P<id_num>\w{0,50})/$', 'main.views.campaign', name='campaign'),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

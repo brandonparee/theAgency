@@ -7,12 +7,12 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0002_remove_compaign_giveaway_fk'),
+        ('main', '0002_remove_campaign_giveaway_fk'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='compaign',
+            model_name='campaign',
             name='image',
             field=models.CharField(max_length=200),
             preserve_default=True,

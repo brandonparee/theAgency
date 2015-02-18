@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='compaign',
+            model_name='campaign',
             name='founder',
             field=models.CharField(default='', max_length=50),
             preserve_default=False,

@@ -1,18 +1,18 @@
 from django import forms
-from main.models import Compaign, Account, Giveaway
+from main.models import Campaign, Account, Giveaway
 #from django.forms import ModelForm
 
-class CompaignForm(forms.ModelForm):
+class CampaignForm(forms.ModelForm):
 	class Meta:
-		model = Compaign
+		model = Campaign
 		fields = ['name', 'description', 'founder', 'founddate', 'image']
 
 class AccountForm(forms.ModelForm):
 	class Meta:
 		model = Account
-		fields = ['name', 'email', 'birth', 'gender', 'compaign_fk', 'questions', 'comments']
+		fields = ['name', 'email', 'birth', 'gender', 'campaign_fk', 'questions', 'comments']
 
 class GiveawayForm(forms.ModelForm):
 	class Meta:
 		model = Giveaway
-		fields = ['quantity', 'item', 'image', 'description', 'compaign_fk']
+		fields = ['quantity', 'item', 'image', 'description', 'campaign_fk']
