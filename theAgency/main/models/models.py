@@ -3,8 +3,6 @@ from django.db import models
 class Campaign(models.Model):
 	name = models.CharField(max_length=200)
 	description = models.TextField(max_length=2000)
-	founder = models.CharField(max_length=50)
-	founddate = models.DateField()
 	image = models.CharField(max_length=200)
 
 	def __str__(self):

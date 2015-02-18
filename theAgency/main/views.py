@@ -2,8 +2,8 @@ from django.shortcuts import render#, redirect
 from django.http import HttpResponseRedirect
 #from django.template import RequestContext
 #from django.forms import ModelForm
-from main.models import Campaign, Giveaway
-from main.forms import CampaignForm, AccountForm, GiveawayForm
+from main.models import CaptureEmail, Campaign, Account, Giveaway
+from main.forms import CampaignForm, AccountForm, GiveawayForm, EmailForm
 
 def home(request):
 	return render(request, 'main/index.html', {})
@@ -28,7 +28,6 @@ def makeAccount(request):
     form = AccountForm()
   return render(request, 'main/makeAccount.html', {'form': form})
 
-
 def makeGiveaway(request):
 	if request.method == 'POST':
 		form = GiveawayForm(request.POST)
@@ -38,6 +37,20 @@ def makeGiveaway(request):
 	else:
 		form = GiveawayForm()
 	return render(request, 'main/makeGiveaway.html', {'form': form})
+
+def EmailCapture(request):
+  if request.method == 'POST':
+    form = EmailForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return HttpResponseRedirect('/emails/')
+  else:
+    form = EmailForm()
+  return render(request, 'main/email_capture.html', {'form': form})
+
+def AllEmails(request):
+  emails = {'Emails': CaptureEmail.objects.all()}
+  return render(request, 'main/all_emails.html', emails)
 
 def campaign(request, id_num):
   try:

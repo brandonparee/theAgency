@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block title %}
+<title>the Agency</title>
+
+{% endblock title %}
+
+{% block content %}
+{% for p in Emails %}
+<div>
+	<p> {{ p.email }} </p>
+	<p> {{ p.name }} </p>
+</div>
+{% endfor %}
+
+{% endblock %}
