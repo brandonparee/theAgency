@@ -2,7 +2,7 @@ from django.shortcuts import render#, redirect
 from django.http import HttpResponseRedirect
 #from django.template import RequestContext
 #from django.forms import ModelForm
-#from main.models import Compaign
+from main.models import Compaign
 from main.forms import CompaignForm, AccountForm, GiveawayForm
 
 def home(request):
@@ -38,3 +38,6 @@ def makeGiveaway(request):
 	else:
 		form = GiveawayForm()
 	return render(request, 'main/makeGiveaway.html', {'form': form})
+
+def compaign(request, id_num):
+    return render(request, 'main/compaign.html', {'Compaign': Compaign.objects.get(id=id_num)})

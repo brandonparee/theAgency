@@ -11,5 +11,6 @@ urlpatterns = patterns('',
     url(r'^makeAgency/$', 'main.views.makeAgency', name='makeAgency'),
     url(r'^makeAccount/$', 'main.views.makeAccount', name='makeAccount'),
     url(r'^makeGiveaway/$', 'main.views.makeGiveaway', name='makeGiveaway'),
+    url(r'^compaign/(?P<id_num>\w{0,50})/$', 'main.views.compaign', name='compaign'),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

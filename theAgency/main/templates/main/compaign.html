@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block title %}
+<title>the Agency</title>
+{% endblock title %}
+
+{% block content %}
+<img src={% static Compaign.image %} alt={% static Compaign.image %}>
+<p> {{ Compaign.name }} </p>
+<p> founded by {{ Compaign.founder }} {{ Compaign.founddate }} </p>
+<p> {{ Compaign.description }} </p>
+{% endblock %}
