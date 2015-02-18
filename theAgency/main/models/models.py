@@ -2,7 +2,7 @@ from django.db import models
 
 class Compaign(models.Model):
 	name = models.CharField(max_length=200)
-	description = models.CharField(max_length=2000)
+	description = models.TextField(max_length=2000)
 	founddate = models.DateField()
 	image = models.CharField(max_length=200)
 
@@ -20,6 +20,8 @@ class Account(models.Model):
 	gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default='Secret')
 	email = models.EmailField(max_length=75)
 	birth = models.DateField()
+	questions = models.TextField(max_length=2000)
+	comments = models.TextField(max_length=2000)
 	compaign_fk = models.ForeignKey('Compaign')
 
 class Giveaway(models.Model):
