@@ -11,11 +11,13 @@ class Account(models.Model):
 	GENDER_CHOICES = (
 		('Male', 'Male'),
 		('Female', 'Female'),
-		('None', 'I choose not to say'),
+		('Secret', 'Secret'),
 		('Both', 'Both'),
 		('Alpha', 'Alpha Male'),
+		('Dog', 'My gender is: Dog'),
+		('Cow', 'Cow because cows are the best.'),
 	)
-	gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default='None')
+	gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default='Secret')
 	email = models.EmailField(max_length=75)
 	birth = models.DateField()
 	compaign_fk = models.ForeignKey('Compaign')
