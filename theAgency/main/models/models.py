@@ -6,6 +6,10 @@ class Compaign(models.Model):
 	founddate = models.DateField()
 	image = models.CharField(max_length=200)
 
+	def __str__(self):
+		return self.name
+
+
 class Account(models.Model):
 	name = models.CharField(max_length=50)
 	GENDER_CHOICES = (
