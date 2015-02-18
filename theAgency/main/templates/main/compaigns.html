@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block title %}
+<title>the Agency</title>
+
+{% endblock title %}
+
+{% block content %}
+{% for p in Compaigns %}
+<a href="/compaign/{{ p.id }}">
+	<div>
+		<img src={% static p.image %} alt={% static p.image %}>
+		<p> {{ p.name }} </p>
+	</div>
+</a>
+{% endfor %}
+
+{% endblock %}

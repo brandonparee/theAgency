@@ -5,12 +5,12 @@ from main.models import Compaign, Account, Giveaway
 class CompaignForm(forms.ModelForm):
 	class Meta:
 		model = Compaign
-		fields = ['name', 'description', 'founddate', 'image']
+		fields = ['name', 'description', 'founder', 'founddate', 'image']
 
 class AccountForm(forms.ModelForm):
 	class Meta:
 		model = Account
-		fields = ['name', 'gender', 'email', 'birth', 'compaign_fk']
+		fields = ['name', 'email', 'birth', 'gender', 'compaign_fk', 'questions', 'comments']
 
 class GiveawayForm(forms.ModelForm):
 	class Meta:

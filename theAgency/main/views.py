@@ -41,3 +41,6 @@ def makeGiveaway(request):
 
 def compaign(request, id_num):
     return render(request, 'main/compaign.html', {'Compaign': Compaign.objects.get(id=id_num)})
+
+def compaigns(request):
+    return render(request, 'main/compaigns.html', {'Compaigns': Compaign.objects.all()})
