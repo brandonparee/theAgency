@@ -6,7 +6,7 @@ class Compaign(models.Model):
 	description = models.CharField(max_length=2000)
 	founddate = models.DateField()
 	image = models.URLField(max_length=200)
-	giveaway_fk = models.ForeignKey('Giveaway')
+	#giveaway_fk = models.ForeignKey('Giveaway')
 
 class Account(models.Model):
 	name = models.CharField(max_length=50)
