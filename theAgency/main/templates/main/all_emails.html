@@ -6,13 +6,11 @@
 {% endblock title %}
 
 {% block content %}
-{% for p in Compaigns %}
-<a href="/compaign/{{ p.id }}">
-	<div>
-		<img src={% static p.image %} alt={% static p.image %}>
-		<p> {{ p.name }} </p>
-	</div>
-</a>
+{% for p in Emails %}
+<div>
+	<p> {{ p.email }} </p>
+	<p> {{ p.name }} </p>
+</div>
 {% endfor %}
 
 {% endblock %}

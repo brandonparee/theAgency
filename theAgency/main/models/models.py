@@ -1,10 +1,8 @@
 from django.db import models
 
-class Compaign(models.Model):
+class Campaign(models.Model):
 	name = models.CharField(max_length=200)
 	description = models.TextField(max_length=2000)
-	founder = models.CharField(max_length=50)
-	founddate = models.DateField()
 	image = models.CharField(max_length=200)
 
 	def __str__(self):
@@ -27,11 +25,11 @@ class Account(models.Model):
 	birth = models.DateField()
 	questions = models.TextField(max_length=2000)
 	comments = models.TextField(max_length=2000)
-	compaign_fk = models.ForeignKey('Compaign')
+	campaign_fk = models.ForeignKey('Campaign')
 
 class Giveaway(models.Model):
 	quantity = models.CharField(max_length=200)
 	item = models.CharField(max_length=200)
 	image = models.CharField(max_length=200)
 	description = models.CharField(max_length=2000)
-	compaign_fk = models.ForeignKey('Compaign')
+	campaign_fk = models.ForeignKey('Campaign')

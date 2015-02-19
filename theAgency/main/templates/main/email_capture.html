@@ -6,7 +6,7 @@
 
 {% block content %}
 <h1>Content Goes Here</h1>
-<form action="/makeCompaign/" method="post">
+<form action="/email/" method="post">
   {% csrf_token %}
   {{ form }}
   <input type="submit" value="Submit" />
