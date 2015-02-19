@@ -14,6 +14,7 @@ class Language(models.Model):
         ('Russian', 'Russian'),
         ('Japanese', 'Japanese'),
         ('Punjabi', 'Punjabi'),
+        ('Other', 'Other')
     )
     language = models.CharField(max_length = 10, choices = LANGUAGE_CHOICES, default = "English")
     RACE_CHOICES = (
@@ -24,10 +25,8 @@ class Language(models.Model):
         ('Middle Eastern', 'Middle Eastern'),
         ('Pacific Islander', 'Pacific Islander'),
         ('Native American', 'Native American'),
-        ('Other', 'Other'),
-        ('Japanese', 'Japanese'),
-        ('Punjabi', 'Punjabi'),
+        ('Other', 'Other')
     )
-    race = models.CharField(max_length = 16, choices = RACE_CHOICES, default = "English")
+    race = models.CharField(max_length = 16, choices = RACE_CHOICES, default = "Caucasian")
     birth = models.DateField()
     zipcode = models.EmailField(max_length = 5)
