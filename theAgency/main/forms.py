@@ -1,6 +1,5 @@
 from django import forms
-from main.models import Campaign, Personal, Giveaway, CaptureEmail
-#from django.forms import ModelForm
+from main.models import Email, Beer, Language, Shirt
 
 class EmailForm(forms.ModelForm):
 	class Meta:

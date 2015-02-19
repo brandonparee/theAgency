@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+<title>The Agency</title>
+{% endblock title %}
+
+{% block content %}
+<h1>Content Goes Here</h1>
+<form action="/language_form/" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}
