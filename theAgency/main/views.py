@@ -1,41 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 #from django.template import RequestContext
-from main.models import CaptureEmail, Campaign, Personal, Giveaway
-from main.forms import Campaign_form, Personal_form, Giveaway_form, Email_form
+from main.models import CaptureEmail, Personal, CampaignEmail
+from main.forms import EmailForm, PersonalForm
 
 def home(request):
 	return render(request, 'main/index.html', {})
-
-def make_campaign(request):
-  if request.method == 'POST':
-    form = campaign_form(request.POST)
-    if form.is_valid():
-    	form.save()
-    	return HttpResponseRedirect('/worked yay/')
-  else:
-    form = Campaign_form()
-  return render(request, 'main/make_campaign.html', {'form': form})
-
-def make_account(request):
-  if request.method == 'POST':
-    form = account_form(request.POST)
-    if form.is_valid():
-    	form.save()
-    	return HttpResponseRedirect('/worked yay/')
-  else:
-    form = AccountForm()
-  return render(request, 'main/make_account.html', {'form': form})
-
-def make_giveaway(request):
-	if request.method == 'POST':
-		form = GiveawayForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect('/worked yay/')
-	else:
-		form = GiveawayForm()
-	return render(request, 'main/make_giveaway.html', {'form': form})
 
 def EmailCapture(request):
   if request.method == 'POST':

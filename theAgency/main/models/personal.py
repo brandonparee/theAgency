@@ -21,7 +21,7 @@ class Personal(models.Model):
 	RACE_CHOICES = (
 		('Caucasian', 'Caucasian'),
 		('Hispanic', 'Hispanic'),
-		('Asian', 'Asian')
+		('Asian', 'Asian'),
 		('African American', 'African American'),
 		('Other', 'Other'),
 		)

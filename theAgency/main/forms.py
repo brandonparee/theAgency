@@ -1,21 +1,11 @@
 from django import forms
-from main.models import Campaign, Personal, Giveaway, CaptureEmail
+from main.models import Personal, CaptureEmail
 #from django.forms import ModelForm
-
-class CampaignForm(forms.ModelForm):
-	class Meta:
-		model = Campaign
-		fields = ['name', 'description', 'image']
 
 class PersonalForm(forms.ModelForm):
 	class Meta:
 		model = Personal
-		fields = ['name', 'email', 'birth', 'gender', 'zipcode', 'campaign_fk']
-
-class GiveawayForm(forms.ModelForm):
-	class Meta:
-		model = Giveaway
-		fields = ['quantity', 'item', 'image', 'description', 'campaign_fk']
+		fields = ['name', 'email', 'birth', 'gender', 'zipcode']
 
 class EmailForm(forms.ModelForm):
 	class Meta:
