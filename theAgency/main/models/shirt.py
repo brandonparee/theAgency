@@ -11,7 +11,7 @@ class Shirt(models.Model):
         ('XL', 'XL'),
         ('XXL', 'XXL'),
     )
-    shirt_size = models.CharField(max_length = 5, choices = SHIRT_SIZE_CHOICES, default = "M")
+    shirt_size = models.CharField(max_length = 3, choices = SHIRT_SIZE_CHOICES, default = "M")
     COLOR_CHOICES = (
         ('W', 'White'),
         ('G', 'Gray'),
