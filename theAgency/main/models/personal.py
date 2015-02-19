@@ -6,13 +6,17 @@ class Personal(models.Model):
 		('Male', 'Male'),
 		('Female', 'Female'),
 		('Secret', 'Secret'),
-		('Both', 'Both'),
-		('Alpha', 'Alpha Male'),
-		('Dog', 'My gender is: Dog'),
-		('Cow', 'Cow because cows are the best.'),
 	)
-
 	gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default='Secret')
+	SHIRT_SIZE_CHOICES = (
+		('XS', 'XS'),
+		('S', 'S'),
+		('M', 'M'),
+		('L', 'L'),
+		('XL', 'XL'),
+		('XXL', 'XXL'),
+	)
+	shirt_size = models.CharField(max_length=3, choices=SHIRT_SIZE_CHOICES)
 	email = models.EmailField(max_length=75)
 	birth = models.DateField()
-	campaign_fk = models.ForeignKey('Campaign')
+	zipcode = models.IntegerField(max_length=5)

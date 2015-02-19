@@ -1,5 +1,5 @@
 from django import forms
-from main.models import Campaign, Account, Giveaway, CaptureEmail
+from main.models import Campaign, Personal, Giveaway, CaptureEmail
 #from django.forms import ModelForm
 
 class CampaignForm(forms.ModelForm):
@@ -7,10 +7,10 @@ class CampaignForm(forms.ModelForm):
 		model = Campaign
 		fields = ['name', 'description', 'image']
 
-class AccountForm(forms.ModelForm):
+class PersonalForm(forms.ModelForm):
 	class Meta:
-		model = Account
-		fields = ['name', 'email', 'birth', 'gender', 'campaign_fk', 'questions', 'comments']
+		model = Personal
+		fields = ['name', 'email', 'birth', 'gender', 'zipcode', 'campaign_fk']
 
 class GiveawayForm(forms.ModelForm):
 	class Meta:

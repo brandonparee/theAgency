@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 #from django.template import RequestContext
-from main.models import CaptureEmail, Campaign, Account, Giveaway
-from main.forms import Campaign_form, Account_form, Giveaway_form, Email_form
+from main.models import CaptureEmail, Campaign, Personal, Giveaway
+from main.forms import Campaign_form, Personal_form, Giveaway_form, Email_form
 
 def home(request):
 	return render(request, 'main/index.html', {})
