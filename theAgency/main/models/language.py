@@ -1,8 +1,8 @@
 from django.db import models
 
 class Language(models.Model):
-	name = models.CharField(max_length = 200)
-	email = models.EmailField(max_length = 75)
+    name = models.CharField(max_length = 200)
+    email = models.EmailField(max_length = 75)
     LANGUAGE_CHOICES = (
         ('English', 'English'),
         ('Mandarin', 'Mandarin'),
@@ -15,7 +15,7 @@ class Language(models.Model):
         ('Japanese', 'Japanese'),
         ('Punjabi', 'Punjabi'),
     )
-    language = models.CharField(max_length = 10, choices = COLOR_CHOICES, default = "English")
+    language = models.CharField(max_length = 10, choices = LANGUAGE_CHOICES, default = "English")
     RACE_CHOICES = (
         ('Caucasian', 'Caucasian'),
         ('African American', 'African American'),
@@ -28,6 +28,6 @@ class Language(models.Model):
         ('Japanese', 'Japanese'),
         ('Punjabi', 'Punjabi'),
     )
-    race = models.CharField(max_length = 16, choices = COLOR_CHOICES, default = "English")
-	birth = models.DateField()
+    race = models.CharField(max_length = 16, choices = RACE_CHOICES, default = "English")
+    birth = models.DateField()
     zipcode = models.EmailField(max_length = 5)

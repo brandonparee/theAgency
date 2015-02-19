@@ -12,7 +12,7 @@ def email_form(request):
     form = EmailForm(request.POST)
     if form.is_valid():
     	form.save()
-    	return HttpResponseRedirect('/worked yay/')
+    	return HttpResponseRedirect('/emails/')
   else:
     form = EmailForm()
   return render(request, 'main/email_form.html', {'form': form})
@@ -49,5 +49,3 @@ def shirt_form(request):
 
 def all_emails(request):
   return render(request, 'main/all_emails.html', {'emails': Email.objects.all()})
-    form = EmailForm()
-  return render(request, 'main/email_capture.html', {'form': form})
