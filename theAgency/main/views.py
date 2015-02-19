@@ -12,7 +12,7 @@ def email_form(request):
     form = EmailForm(request.POST)
     if form.is_valid():
     	form.save()
-    	return HttpResponseRedirect('/emails/')
+    	return HttpResponseRedirect('/signup/')
   else:
     form = EmailForm()
   return render(request, 'main/email_form.html', {'form': form})
