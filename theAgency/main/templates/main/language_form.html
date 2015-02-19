@@ -6,6 +6,9 @@
 {% endblock title %}
 
 {% block content %}
+<div class="container"> 
+
+
 <h1>Content Goes Here</h1>
 <form action="/giveaway/language/" method="post" class="form">
     {% csrf_token %}
@@ -16,4 +19,5 @@
         </button>
     {% endbuttons %}
 </form>
+</div>
 {% endblock %}
