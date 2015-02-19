@@ -42,9 +42,9 @@ def shirt_form(request):
     form = ShirtForm(request.POST)
     if form.is_valid():
       form.save()
-      return HttpResponseRedirect('/emails/')
+      return HttpResponseRedirect('/worked yay/')
   else:
-    form = EmailForm()
+    form = ShirtForm()
   return render(request, 'main/shirt_form.html', {'form': form})
 
 def all_emails(request):

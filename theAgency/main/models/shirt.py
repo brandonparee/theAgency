@@ -10,18 +10,17 @@ class Shirt(models.Model):
         ('L', 'L'),
         ('XL', 'XL'),
         ('XXL', 'XXL'),
-        ('Other', 'Other')
     )
-    shirt_size = models.CharField(max_length = 5, choices = SHIRT_SIZE_CHOICES, default = "Other")
+    shirt_size = models.CharField(max_length = 5, choices = SHIRT_SIZE_CHOICES, default = "M")
     COLOR_CHOICES = (
-        ('White', 'W'),
-        ('Gray', 'G'),
-        ('Black', 'B')
+        ('W', 'White'),
+        ('G', 'Gray'),
+        ('B', 'Black')
     )
-    color = models.CharField(max_length = 5, choices = COLOR_CHOICES, default = "White")
+    color = models.CharField(max_length = 1, choices = COLOR_CHOICES, default = "White")
     CUT_CHOICES = (
-        ('Unisex', 'M'),
-        ("Women", 'F')
+        ('M', 'Unisex'),
+        ("F", 'Womens')
     )
     cut = models.CharField(max_length = 1, choices = CUT_CHOICES, default = "Unisex")
     zipcode = models.CharField(max_length = 5)
