@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 #from django.template import RequestContext
 from main.models import CaptureEmail, Campaign, Account, Giveaway
-from main.forms import CampaignForm, AccountForm, GiveawayForm, EmailForm
+from main.forms import Campaign_form, Account_form, Giveaway_form, Email_form
 
 def home(request):
 	return render(request, 'main/index.html', {})
@@ -15,7 +15,7 @@ def make_campaign(request):
     	return HttpResponseRedirect('/worked yay/')
   else:
     form = Campaign_form()
-  return render(request, 'main/makeCampaign.html', {'form': form})
+  return render(request, 'main/make_campaign.html', {'form': form})
 
 def make_account(request):
   if request.method == 'POST':
@@ -25,7 +25,7 @@ def make_account(request):
     	return HttpResponseRedirect('/worked yay/')
   else:
     form = AccountForm()
-  return render(request, 'main/makeAccount.html', {'form': form})
+  return render(request, 'main/make_account.html', {'form': form})
 
 def make_giveaway(request):
 	if request.method == 'POST':
@@ -35,7 +35,7 @@ def make_giveaway(request):
 			return HttpResponseRedirect('/worked yay/')
 	else:
 		form = GiveawayForm()
-	return render(request, 'main/makeGiveaway.html', {'form': form})
+	return render(request, 'main/make_giveaway.html', {'form': form})
 
 def EmailCapture(request):
   if request.method == 'POST':
@@ -60,7 +60,7 @@ def campaign(request, id_num):
     giveaways = Giveaway.objects.get(campaign_fk=id_num)
   except Giveaway.DoesNotExist:
     giveaways = None
-  return render(request, 'main/campaign.html', {'Campaign': Campaign.objects.get(id=id_num), 'Giveaways': giveaways})
+  return render(request, 'main/campaign.html', {'campaign': Campaign.objects.get(id=id_num), 'giveaways': giveaways})
 
 def campaigns(request):
-  return render(request, 'main/campaigns.html', {'Campaigns': Campaign.objects.all()})
+  return render(request, 'main/campaigns.html', {'campaigns': Campaign.objects.all()})
