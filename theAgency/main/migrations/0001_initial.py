@@ -11,34 +11,19 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Account',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=50)),
-                ('gender', models.CharField(default=b'Secret', max_length=6, choices=[(b'Male', b'Male'), (b'Female', b'Female'), (b'Secret', b'Secret'), (b'Both', b'Both'), (b'Alpha', b'Alpha Male'), (b'Dog', b'My gender is: Dog'), (b'Cow', b'Cow because cows are the best.')])),
-                ('email', models.EmailField(max_length=75)),
-                ('birth', models.DateField()),
-                ('questions', models.TextField(max_length=2000)),
-                ('comments', models.TextField(max_length=2000)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Campaign',
+            name='CampaignBeer',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
-                ('description', models.TextField(max_length=2000)),
-                ('image', models.CharField(max_length=200)),
+                ('email', models.EmailField(max_length=75)),
+                ('birth', models.CharField(max_length=5)),
             ],
             options={
             },
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='CaptureEmail',
+            name='CampaignEmail',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
@@ -49,23 +34,30 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='Giveaway',
+            name='CampaignShirt',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('quantity', models.CharField(max_length=200)),
-                ('item', models.CharField(max_length=200)),
-                ('image', models.CharField(max_length=200)),
-                ('description', models.CharField(max_length=2000)),
-                ('campaign_fk', models.ForeignKey(to='main.Campaign')),
+                ('name', models.CharField(max_length=200)),
+                ('email', models.EmailField(max_length=75)),
+                ('shirt_size', models.CharField(default=b'Other', max_length=5, choices=[(b'XS', b'XS'), (b'S', b'S'), (b'M', b'M'), (b'L', b'L'), (b'XL', b'XL'), (b'XXL', b'XXL'), (b'Other', b'Other')])),
+                ('color', models.CharField(default=b'White', max_length=5, choices=[(b'White', b'W'), (b'Gray', b'G'), (b'Black', b'B')])),
+                ('cut', models.CharField(default=b'Unisex', max_length=1, choices=[(b'Unisex', b'M'), (b'Women', b'F')])),
+                ('zipcode', models.CharField(max_length=5)),
             ],
             options={
             },
             bases=(models.Model,),
         ),
-        migrations.AddField(
-            model_name='account',
-            name='campaign_fk',
-            field=models.ForeignKey(to='main.Campaign'),
-            preserve_default=True,
+        migrations.CreateModel(
+            name='Language',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=200)),
+                ('email', models.EmailField(max_length=75)),
+                ('birth', models.CharField(max_length=5)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
         ),
     ]

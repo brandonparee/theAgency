@@ -1,13 +1,8 @@
 from django import forms
-from main.models import Personal, CaptureEmail
+from main.models import CampaignEmail
 #from django.forms import ModelForm
-
-class PersonalForm(forms.ModelForm):
-	class Meta:
-		model = Personal
-		fields = ['name', 'email', 'birth', 'gender', 'zipcode']
 
 class EmailForm(forms.ModelForm):
 	class Meta:
-		model = CaptureEmail
+		model = CampaignEmail
 		fields = ['name', 'email']

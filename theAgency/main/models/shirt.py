@@ -24,4 +24,4 @@ class CampaignShirt(models.Model):
         ("Women", 'F')
     )
     cut=models.CharField(max_length=1, choices=CUT_CHOICES, default="Unisex")
-    zipcode=models.CharField(min_length=5, max_length=5)
+    zipcode=models.CharField(max_length=5)
