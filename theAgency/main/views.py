@@ -53,10 +53,6 @@ def AllEmails(request):
 
 def campaign(request, id_num):
   try:
-    campaigns = Campaign.objects.get(id=id_num)
-  except Campaign.DoesNotExist:
-    return HttpResponseRedirect('/campaigns/')
-  try:
     giveaways = Giveaway.objects.get(campaign_fk=id_num)
   except Giveaway.DoesNotExist:
     giveaways = None
