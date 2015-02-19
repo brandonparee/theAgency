@@ -1,26 +1,25 @@
-from django.shortcuts import render#, redirect
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 #from django.template import RequestContext
-#from django.forms import ModelForm
 from main.models import CaptureEmail, Campaign, Account, Giveaway
 from main.forms import CampaignForm, AccountForm, GiveawayForm, EmailForm
 
 def home(request):
 	return render(request, 'main/index.html', {})
 
-def makeCampaign(request):
+def make_campaign(request):
   if request.method == 'POST':
-    form = CampaignForm(request.POST)
+    form = campaign_form(request.POST)
     if form.is_valid():
     	form.save()
     	return HttpResponseRedirect('/worked yay/')
   else:
-    form = CampaignForm()
+    form = Campaign_form()
   return render(request, 'main/makeCampaign.html', {'form': form})
 
-def makeAccount(request):
+def make_account(request):
   if request.method == 'POST':
-    form = AccountForm(request.POST)
+    form = account_form(request.POST)
     if form.is_valid():
     	form.save()
     	return HttpResponseRedirect('/worked yay/')
@@ -28,7 +27,7 @@ def makeAccount(request):
     form = AccountForm()
   return render(request, 'main/makeAccount.html', {'form': form})
 
-def makeGiveaway(request):
+def make_giveaway(request):
 	if request.method == 'POST':
 		form = GiveawayForm(request.POST)
 		if form.is_valid():
