@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 class Language(models.Model):
     name = models.CharField(max_length = 200)
@@ -29,4 +30,5 @@ class Language(models.Model):
     )
     race = models.CharField(max_length = 16, choices = RACE_CHOICES, default = "Caucasian")
     birth = models.DateField()
-    zipcode = models.EmailField(max_length = 5)
+    zipcode_validatior = RegexValidator(regex = '^\d{5}(?:[-\s]\d{4})?$')
+    zipcode = models.EmailField(validators = [zipcode_validatior],max_length = 5)

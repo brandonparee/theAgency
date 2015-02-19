@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 class Shirt(models.Model):
     name = models.CharField(max_length = 200)
@@ -23,4 +24,5 @@ class Shirt(models.Model):
         ("F", 'Womens')
     )
     cut = models.CharField(max_length = 1, choices = CUT_CHOICES, default = "Unisex")
-    zipcode = models.CharField(max_length = 5)
+    zipcode_validatior = RegexValidator(regex = '^\d{5}(?:[-\s]\d{4})?$')
+    zipcode = models.CharField(validators = [zipcode_validatior], max_length = 5)
