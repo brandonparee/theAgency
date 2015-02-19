@@ -1,4 +1,5 @@
 {% extends "main/base.html" %}
+{% load bootstrap3 %}
 
 {% block title %}
 <title>The Agency</title>
@@ -6,9 +7,13 @@
 
 {% block content %}
 <h1>Content Goes Here</h1>
-<form action="/email/" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <input type="submit" value="Submit" />
+<form action="/email/" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+           Submit
+        </button>
+    {% endbuttons %}
 </form>
 {% endblock %}
