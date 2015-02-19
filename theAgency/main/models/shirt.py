@@ -22,10 +22,5 @@ class Shirt(models.Model):
         ('M', 'Unisex'),
         ("F", 'Womens')
     )
-<<<<<<< HEAD
     cut = models.CharField(max_length = 1, choices = CUT_CHOICES, default = "Unisex")
     zipcode = models.CharField(max_length = 5)
-=======
-    cut=models.CharField(max_length=1, choices=CUT_CHOICES, default="Unisex")
-    zipcode=models.CharField(max_length=5)
->>>>>>> 13e177590743abbf8805e8c1d942477cf7e1b2db
