@@ -6,14 +6,14 @@
 {% endblock title %}
 
 {% block content %}
-<section class="featured">
+<section class=" featured featured-language">
 			<div class="container"> 
 				<div class="row mar-bot40">
 					<div class="col-md-6 col-md-offset-3">
 						
 						<div class="align-center">
 							<i class="fa fa-language fa-5x mar-bot20"></i>
-							<h2 class="slogan">Still working on the template</h2>
+							<h2 class="slogan">Advertise Language</h2>
 							<p>
 							Lorem ipsum dolor sit amet, natum bonorum ex eu, at vim aliquip lucilius praesent. 
 							Alia laudem antiopam te ius, sed ad munere integre, ubique facete sapientem nam ut. 
@@ -27,7 +27,7 @@
 <div class="container"> 
 
 
-<h1>Content Goes Here</h1>
+
 <form action="/giveaway/language/" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form %}
