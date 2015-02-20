@@ -63,3 +63,7 @@ def campaigns(request):
 
 def thanks(request, thanks_id):
     return render(request, 'main/thanks.html', {'thanks': Thanks.objects.get(id=thanks_id)})
+
+	
+def about(request):
+    return render(request, 'main/about.html')
