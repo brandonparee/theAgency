@@ -454,6 +454,18 @@ section.featured-language {
     color: #fdfdfd;
 }
 
+section.featured-allemails {
+    padding: 200px 0 60px;
+    background: #5a5255;
+    color: #fdfdfd;
+}
+
+section.featured-thanks {
+    padding: 200px 0 60px;
+    background: #433e90;
+    color: #fdfdfd;
+}
+
 section.featured-email{
     padding: 200px 0 60px;
     background: #d41243;
