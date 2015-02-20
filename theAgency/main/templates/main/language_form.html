@@ -13,11 +13,10 @@
 						
 						<div class="align-center">
 							<i class="fa fa-language fa-5x mar-bot20"></i>
-							<h2 class="slogan">Signup For 95% Discount on Language Software!</h2>
+							<h2 class="slogan">Signup For 95% Discount on Moosetta Stone!</h2>
 							<p>
 							Lorem ipsum dolor sit amet, natum bonorum ex eu, at vim aliquip lucilius praesent. 
 							Alia laudem antiopam te ius, sed ad munere integre, ubique facete sapientem nam ut. 
-				
 							</p>	
 						</div>
 					</div>
@@ -25,17 +24,14 @@
 			</div>
 		</section>
 <div class="container"> 
-
-
-
-<form action="/giveaway/language/" method="post" class="form">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons %}
-        <button type="submit" class="btn btn-primary">
-            Submit
-        </button>
-    {% endbuttons %}
-</form>
+    <form action="/giveaway/language/" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        {% endbuttons %}
+    </form>
 </div>
 {% endblock %}

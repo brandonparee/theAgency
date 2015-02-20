@@ -1,96 +1,86 @@
 {% load staticfiles %}
 {% load bootstrap3 %}
 <html>
-  <head>
-  <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>blAnD</title>
         <meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
-    <link href="{% static 'css/custom.css' %}" rel="stylesheet" media="screen">
-     <link href="{% static 'css/isotope.css' %}" rel="stylesheet" media="screen">
-      <link href="{% static 'css/default.css' %}" rel="stylesheet" media="screen">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-
-    {% block title %}
-    {% endblock %}
-  </head>
-
-  <body>
-        
-    <section id="header" class="appear"></section>
-    <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
-       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="fa fa-bars color-white"></span>
-          </button>
-          <h1><a class="navbar-brand" href="{% url 'main.views.home' %}" data-0="line-height:90px;" data-300="line-height:50px;">      blAnD
-          </a></h1>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    	<ul class="nav navbar-nav navbar-right">
-          <li class=""><a href="{% url 'main.views.home' %}">Home<span class="sr-only"></span></a></li>
-          <li class=""><a href="{% url 'main.views.beer_form' %}">Beer<span class="sr-only"></span></a></li>
-          <li class=""><a href="{% url 'main.views.language_form' %}">Language<span class="sr-only"></span></a></li>
-          <li class=""><a href="{% url 'main.views.shirt_form' %}">Shirt<span class="sr-only"></span></a></li>
-          <li class=""><a href="{% url 'main.views.email_form' %}">Email<span class="sr-only"></span></a></li>
-         
-          
-         
-        </ul>
-    		{% block navbar %}
-  		  	{% endblock %}
-         
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    </div>
-  </nav>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/custom.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/isotope.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'css/default.css' %}" rel="stylesheet" media="screen">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+{% block title %}
+{% endblock %}
+    </head>
+    <body>  
+        <section id="header" class="appear"></section>
+        <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bars color-white"></span>
+                    </button>
+                    <h1><a class="navbar-brand" href="{% url 'main.views.home' %}" data-0="line-height:90px;" data-300="line-height:50px;">blAnD</a></h1>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	            <ul class="nav navbar-nav navbar-right">
+                        <li class=""><a href="{% url 'main.views.home' %}">Home<span class="sr-only"></span></a></li>
+                        <li class=""><a href="{% url 'main.views.beer_form' %}">Beer<span class="sr-only"></span></a></li>
+                        <li class=""><a href="{% url 'main.views.language_form' %}">Language<span class="sr-only"></span></a></li>
+                        <li class=""><a href="{% url 'main.views.shirt_form' %}">Shirt<span class="sr-only"></span></a></li>
+                        <li class=""><a href="{% url 'main.views.email_form' %}">Email<span class="sr-only"></span></a></li         
+                    </ul>
+                    {% block navbar %}
+                    {% endblock %}
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </div>
+        </nav>
  
-          {% block content %}
-      {% endblock %}
+        {% block content %}
+        {% endblock %}
     
-<section id="footer" class="section footer">
-	<div class="container">
-		<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
-			<div class="col-sm-12 align-center">
-        <ul class="social-network social-circle">
-            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
-            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="https://github.com/brandonparee/theAgency" class="github" title="Github"><i class="fa fa-github"></i></a></li>
-        </ul>				
-			</div>
-		</div>
-	</div>
-</section>
+        <section id="footer" class="section footer">
+        	<div class="container">
+        		<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+        			<div class="col-sm-12 align-center">
+                <ul class="social-network social-circle">
+                    <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="https://github.com/brandonparee/theAgency" class="github" title="Github"><i class="fa fa-github"></i></a></li>
+                </ul>				
+        			</div>
+        		</div>
+        	</div>
+        </section>
 
-<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+        <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
- 
-  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-  
- 
-  <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
-  <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
-  <script src="{% static 'js/fancybox/jquery.fancybox.pack.js' %}"></script>
-  <script src="{% static 'js/skrollr.min.js' %}"></script>   
-  <script src="{% static 'js/jquery.scrollTo-1.4.3.1-min.js' %}"></script>
-  <script src="{% static 'js/jquery.localscroll-1.2.7-min.js' %}"></script>
-  <script src="{% static 'js/stellar.js' %}"></script>
-  <script src="{% static 'js/jquery.appear.js' %}"></script>
-  <script src="{% static 'js/validate.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
 
-   <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 5px; z-index: 999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0.5;"><div style="position: relative; top: 0px; height: 5px; width: 1280px; border-radius: 2px; background-color: rgb(25, 25, 25); background-clip: padding-box;"></div></div>
+        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
 
-   <div style="position: relative; top: 0px; height: 5px; width: 1280px; border-radius: 2px; background-color: rgb(25, 25, 25); background-clip: padding-box;"></div>
-  </body>
+        <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+        <script src="{% static 'js/fancybox/jquery.fancybox.pack.js' %}"></script>
+        <script src="{% static 'js/skrollr.min.js' %}"></script>   
+        <script src="{% static 'js/jquery.scrollTo-1.4.3.1-min.js' %}"></script>
+        <script src="{% static 'js/jquery.localscroll-1.2.7-min.js' %}"></script>
+        <script src="{% static 'js/stellar.js' %}"></script>
+        <script src="{% static 'js/jquery.appear.js' %}"></script>
+        <script src="{% static 'js/validate.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+        <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 5px; z-index: 999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0.5;"><div style="position: relative; top: 0px; height: 5px; width: 1280px; border-radius: 2px; background-color: rgb(25, 25, 25); background-clip: padding-box;"></div></div>
+
+        <div style="position: relative; top: 0px; height: 5px; width: 1280px; border-radius: 2px; background-color: rgb(25, 25, 25); background-clip: padding-box;"></div>
+    </body>
 </html>
