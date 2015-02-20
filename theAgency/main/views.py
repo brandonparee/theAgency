@@ -61,5 +61,5 @@ def campaigns(request):
     return render(request, 'main/campaigns.html')
 
 
-def thanks(request):
+def thanks(request, ):
     return render(request, 'main/thanks.html', {})

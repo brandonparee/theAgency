@@ -31,4 +31,4 @@ class Language(models.Model):
     race = models.CharField(max_length = 16, choices = RACE_CHOICES, default = "Caucasian")
     birth = models.DateField()
     zipcode_validatior = RegexValidator(regex = '^\d{5}(?:[-\s]\d{4})?$')
-    zipcode = models.EmailField(validators = [zipcode_validatior],max_length = 5)
+    zipcode = models.CharField(validators = [zipcode_validatior],max_length = 5)
