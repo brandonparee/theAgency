@@ -123,16 +123,16 @@
 
         }
 	
-	//nicescroll
-	$("html").niceScroll({zindex:999,cursorborder:"",cursorborderradius:"2px",cursorcolor:"#191919",cursoropacitymin:.5});
-	function initNice() {
-		if($(window).innerWidth() <= 960) {
-			$('html').niceScroll().remove();
-		} else {
-			$("html").niceScroll({zindex:999,cursorborder:"",cursorborderradius:"2px",cursorcolor:"#191919",cursoropacitymin:.5});
-		}
-	}
-	$(window).load(initNice);
-	$(window).resize(initNice);
+	// //nicescroll
+	// $("html").niceScroll({zindex:999,cursorborder:"",cursorborderradius:"2px",cursorcolor:"#191919",cursoropacitymin:.5});
+	// function initNice() {
+	// 	if($(window).innerWidth() <= 960) {
+	// 		$('html').niceScroll().remove();
+	// 	} else {
+	// 		$("html").niceScroll({zindex:999,cursorborder:"",cursorborderradius:"2px",cursorcolor:"#191919",cursoropacitymin:.5});
+	// 	}
+	// }
+	// $(window).load(initNice);
+	// $(window).resize(initNice);
 
 })(jQuery);
