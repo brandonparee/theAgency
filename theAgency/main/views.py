@@ -61,5 +61,5 @@ def campaigns(request):
     return render(request, 'main/campaigns.html')
 
 
-def thanks(request, ):
-    return render(request, 'main/thanks.html', {})
+def thanks(request, thanks_id):
+    return render(request, 'main/thanks.html', {'thanks': Thanks.objects.get(id=thanks_id)})
