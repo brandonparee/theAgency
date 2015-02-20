@@ -17,6 +17,11 @@ body {
     text-shadow: none;
 }
 
+.peter a {
+	
+	color: white;
+	text-decoration: none;
+	}
 .clear {
     clear: both;
 }

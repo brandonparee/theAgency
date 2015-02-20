@@ -1,9 +1,40 @@
 {% extends "main/base.html" %}
 
 {% block title %}
-<title>The Agency</title>
+<title>theAgency</title>
 {% endblock title %}
 
+{% block navbar %}
+
+{% endblock %}
+
+
 {% block content %}
-<h1>GET FREE STUFF NAOW! :0</h1>
+<section class="featured featured-index">
+			<div class="container"> 
+				<div class="row mar-bot40">
+					<div class="col-md-6 col-md-offset-3">
+						
+						<div class="align-center">
+							
+							<h2 class="slogan">Campaigns</h2>
+							<p>
+							Check out our sweet deals bellow!
+							<div class="peter">
+							<a href="{% url 'main.views.beer_form' %}">Beer<span class="sr-only"></span></a>
+							</br>
+							<a href="{% url 'main.views.language_form' %}">Language<span class="sr-only"></span></a>
+							</br>
+							<a href="{% url 'main.views.shirt_form' %}">Shirt<span class="sr-only"></span></a>
+							</br>
+							<a href="{% url 'main.views.email_form' %}">Music<span class="sr-only"></span></a>
+							</div>
+							</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
 {% endblock %}
