@@ -14,7 +14,7 @@ class BeerForm(forms.ModelForm):
 class LanguageForm(forms.ModelForm):
 	class Meta:
 		model = Language
-		fields = ['email']
+		fields = ['name', 'email', 'language', 'race', 'birth', 'zipcode']
 
 class ShirtForm(forms.ModelForm):
 	class Meta:
