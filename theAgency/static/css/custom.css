@@ -17,6 +17,10 @@ body {
     text-shadow: none;
 }
 
+.panel-default:hover{
+    background-color: #d2d2d2;
+}
+
 .peter a {
 	
 	color: white;
@@ -229,6 +233,8 @@ a:hover {
 .pad-bot40 {
     padding-bottom: 40px;
 }
+
+
 
 
 /* ---- margin --- */
@@ -466,7 +472,7 @@ section.featured-allemails {
 }
 
 section.featured-thanks {
-    padding: 200px 0 60px;
+    padding: 200px 0 150px;
     background: #433e90;
     color: #fdfdfd;
 }
@@ -516,6 +522,8 @@ section.featured.inner {
     width: auto;
     display: inline;
 }
+
+P
 
 .flex-direction-nav a {
     display: block;
