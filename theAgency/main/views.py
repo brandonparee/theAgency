@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 #from django.template import RequestContext
-from main.models import Email, Beer, Language, Shirt
+from main.models import Email, Beer, Language, Shirt, Thanks
 from main.forms import EmailForm, BeerForm, LanguageForm, ShirtForm
 
 
@@ -62,4 +62,4 @@ def campaigns(request):
 
 
 def thanks(request, thanks_id):
-    return render(request, 'main/thanks.html', {'thanks': Thanks.objects.get(id=thanks_id)})
+    return render(request, 'main/thanks.html', {'thanks': Thanks.objects.get(id=int(thanks_id))})

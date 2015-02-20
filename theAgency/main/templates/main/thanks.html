@@ -12,9 +12,9 @@
 						
 						<div class="align-center">
 							<i class="fa fa-smile-o fa-5x mar-bot20"></i>
-							<h2 class="slogan">Thanks for your input!</h2>
+							<h2 class="slogan">Thanks for your input! {{ thanks.message }}</h2>
 							<p>
-							<a class="" href="{% url 'main.views.campaigns' %}">Fill out another? Click for more FREE stuff!</a>
+							<a class="" href="{{ thanks.url }}">Share this link, still working on this part</a>
 							</p>	
 						</div>
 					</div>
