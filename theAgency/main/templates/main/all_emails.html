@@ -3,14 +3,32 @@
 {% block title %}
 <title>the Agency</title>
 
+
 {% endblock title %}
 
 {% block content %}
-{% for p in emails %}
-<div>
-	<p> {{ p.email }} </p>
-	<p> {{ p.name }} </p>
-</div>
-{% endfor %}
+<section class="featured featured-allemails">
+	<div class="container"> 
+		<div class="row mar-bot40">
+			<div class="col-md-6 col-md-offset-3">
+
+				<div class="align-center">
+					<i class="fa fa-envelope-o fa-5x mar-bot20"></i>
+					<h2 class="slogan">Emails</h2>
+					</div>
+					{% for p in emails %}
+					<div>
+
+						<h2> {{ p.name }} </h2>
+						<h4> {{ p.email }} </h4>
+
+					
+					{% endfor %}	
+				<!-- /div> -->
+			</div>
+		</div>
+	</div>
+</section>
+
 
 {% endblock %}
