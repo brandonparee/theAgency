@@ -24,7 +24,5 @@ urlpatterns = patterns('',
                            name='all_emails'),
                        url(r'^thanks-for-your-input/(?P<thanks_id>\d+)/$',
                            'main.views.thanks', name='thanks'),
-                       url(r'^thanks_form/?', 'main.views.thanks_form',
-                           name='thanks_form'),
                        url(r'^admin/', include(admin.site.urls)),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
