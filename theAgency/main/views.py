@@ -14,7 +14,7 @@ def email_form(request):
         form = EmailForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/thanks-for-your-input/')
+            return HttpResponseRedirect('/thanks-for-your-input/4')
     else:
         form = EmailForm()
     return render(request, 'main/email_form.html', {'form': form})
@@ -25,7 +25,7 @@ def beer_form(request):
         form = BeerForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/thanks-for-your-input/')
+            return HttpResponseRedirect('/thanks-for-your-input/5')
     else:
         form = BeerForm()
     return render(request, 'main/beer_form.html', {'form': form})
@@ -36,7 +36,7 @@ def language_form(request):
         form = LanguageForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/thanks-for-your-input/')
+            return HttpResponseRedirect('/thanks-for-your-input/02')
     else:
         form = LanguageForm()
     return render(request, 'main/language_form.html', {'form': form})
@@ -47,7 +47,7 @@ def shirt_form(request):
         form = ShirtForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/thanks-for-your-input/')
+            return HttpResponseRedirect('/thanks-for-your-input/03')
     else:
         form = ShirtForm()
     return render(request, 'main/shirt_form.html', {'form': form})
