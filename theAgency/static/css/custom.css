@@ -464,6 +464,11 @@ section.featured-language {
     background: #a200ff;
     color: #fdfdfd;
 }
+section.featured-about {
+    padding: 200px 0 60px;
+    background:#86becb;
+    color: #b2e5e5;
+}
 
 section.featured-allemails {
     padding: 200px 0 60px;
@@ -482,6 +487,8 @@ section.featured-email{
     background: #d41243;
     color: #fdfdfd;
 }
+
+
 
 section.featured h2.slogan {
     color: #fff;
